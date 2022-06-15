@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
+:root {
+    --primary: #0a8f8f;
+    --secondary: #00008a;
+}
+
+body {
+    font-family: 'Open Sans';
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/** Belt base styles **/
+.belt {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary), var(--secondary));
+    background-size: 300% 100%;
+
+    animation-name: animateBackground;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/** Belt animation styles **/
+.normal {
+    animation-direction: normal;
+}
+
+.reverse {
+    animation-direction: reverse;
+}
+
+/** Triangular belt styles **/
+.belt.triangular {
+    mask-image: repeating-conic-gradient(from 30deg, black 0% 60deg, transparent 0% 120deg);
+    mask-size: 60px 104px;
+}
+
+.belt.triangular.reverse {
+    mask-image: repeating-conic-gradient(from 30deg, transparent 0% 60deg, black 0% 120deg);
+    mask-size: 60px 104px;
+}
+
+/** Adjacent cube styles **/
+.belt.adjacent-cube {
+    mask-image: linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(60deg, rgba(0, 0, 0, 0.5) 25%, transparent 25.5%, transparent 75%, rgba(0, 0, 0, 0.5) 75%, rgba(0, 0, 0, 0.5)), linear-gradient(60deg, rgba(0, 0, 0, 0.5) 25%, transparent 25.5%, transparent 75%, rgba(0, 0, 0, 0.5) 75%, rgba(0, 0, 0, 0.5));
+    mask-size: 60px 105px;
+    mask-position: 0 0, 0 0, 30px 52.5px, 30px 52.5px, 0 0, 30px 52.5px;
+}
+
+/** Diagonal stripe styles **/
+.belt.diagonal-stripe {
+    mask-image: repeating-linear-gradient(45deg, transparent, transparent 40px, #000000 40px, #000000 80px);
+}
+
+.belt.diagonal-stripe.reverse {
+    mask-image: repeating-linear-gradient(45deg, black, black 40px, transparent 40px, transparent 80px);
+}
+
+/** Animation keyframes **/
+@keyframes animateBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+@-o-keyframes animateBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+@-moz-keyframes animateBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+@-webkit-keyframes animateBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+}
