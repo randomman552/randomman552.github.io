@@ -148,8 +148,8 @@ body {
 /** About section styles **/
 .about {
     display: grid;
+    box-sizing: border-box;
     width: 600px;
-    height: 210px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 20px;
@@ -190,7 +190,7 @@ body {
     flex-wrap: wrap;
 }
 
-.about .links .link {
+.about .links .link .link-icon {
     height: 60px;
     width: 60px;
     border-radius: 5px;
@@ -203,7 +203,22 @@ body {
     transition: 0.3s;
 }
 
-.about .links .link:hover {
+.about .links .link {
+    display: flex;
+    flex-direction: row;
+}
+
+.about .links .link:hover .link-icon {
     background-color: #ffffff;
 }
-  
+
+/** Small screens **/
+@media (max-device-width: 600px) {
+    .about {
+        width: 90%;
+    }
+
+    .about .links .link .link-text {
+        display: flex;
+    }
+}
