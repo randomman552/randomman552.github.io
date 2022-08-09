@@ -23,6 +23,7 @@ body {
     padding: 0;
 }
 
+
 /** Belt base styles **/
 .belt {
     position: fixed;
@@ -54,6 +55,7 @@ body {
     -webkit-animation-timing-function: linear;
 }
 
+
 /** Belt animation styles **/
 .normal {
     animation-direction: normal;
@@ -69,32 +71,45 @@ body {
     -webkit-animation-direction: reverse;
 }
 
+
 /** Triangular belt styles **/
 .belt.triangular {
     mask-image: repeating-conic-gradient(from 30deg, black 0% 60deg, transparent 0% 120deg);
     mask-size: 60px 104px;
+    -webkit-mask-image: repeating-conic-gradient(from 30deg, black 0% 60deg, transparent 0% 120deg);
+    -webkit-mask-size: 60px 104px;
 }
 
 .belt.triangular.reverse {
     mask-image: repeating-conic-gradient(from 30deg, transparent 0% 60deg, black 0% 120deg);
     mask-size: 60px 104px;
+    -webkit-mask-image: repeating-conic-gradient(from 30deg, transparent 0% 60deg, black 0% 120deg);
+    -webkit-mask-size: 60px 104px;
 }
+
 
 /** Adjacent cube styles **/
 .belt.adjacent-cube {
     mask-image: linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(60deg, rgba(0, 0, 0, 0.5) 25%, transparent 25.5%, transparent 75%, rgba(0, 0, 0, 0.5) 75%, rgba(0, 0, 0, 0.5)), linear-gradient(60deg, rgba(0, 0, 0, 0.5) 25%, transparent 25.5%, transparent 75%, rgba(0, 0, 0, 0.5) 75%, rgba(0, 0, 0, 0.5));
     mask-size: 60px 105px;
     mask-position: 0 0, 0 0, 30px 52.5px, 30px 52.5px, 0 0, 30px 52.5px;
+    -webkit-mask-image: linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(60deg, rgba(0, 0, 0, 0.5) 25%, transparent 25.5%, transparent 75%, rgba(0, 0, 0, 0.5) 75%, rgba(0, 0, 0, 0.5)), linear-gradient(60deg, rgba(0, 0, 0, 0.5) 25%, transparent 25.5%, transparent 75%, rgba(0, 0, 0, 0.5) 75%, rgba(0, 0, 0, 0.5));
+    -webkit-mask-size: 60px 105px;
+    -webkit-mask-position: 0 0, 0 0, 30px 52.5px, 30px 52.5px, 0 0, 30px 52.5px;
 }
+
 
 /** Diagonal stripe styles **/
 .belt.diagonal-stripe {
     mask-image: repeating-linear-gradient(45deg, transparent, transparent 40px, #000000 40px, #000000 80px);
+    -webkit-mask-image: repeating-linear-gradient(45deg, transparent, transparent 40px, #000000 40px, #000000 80px);
 }
 
 .belt.diagonal-stripe.reverse {
     mask-image: repeating-linear-gradient(45deg, black, black 40px, transparent 40px, transparent 80px);
+    -webkit-mask-image: repeating-linear-gradient(45deg, black, black 40px, transparent 40px, transparent 80px);
 }
+
 
 /** Darkening layer styles **/
 .darkener {
@@ -103,6 +118,7 @@ body {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.25);
 }
+
 
 /** Animation keyframes **/
 @keyframes animateBackground {
@@ -144,6 +160,7 @@ body {
         background-position: 100% 0;
     }
 }
+
 
 /** About section styles **/
 .about {
@@ -198,9 +215,12 @@ body {
     text-align: center;
 
     background-color: #dddddd;
+    transition: 0.3s;
+
     mask-size: 100%;
     mask-image: url(/icons/link.svg);
-    transition: 0.3s;
+    -webkit-mask-size: 100%;
+    -webkit-mask-image: url(/icons/link.svg);
 }
 
 .about .links .link {
@@ -211,6 +231,19 @@ body {
 .about .links .link:hover .link-icon {
     background-color: #ffffff;
 }
+
+
+/* Link icon styles (GitHub, LinkedIn, etc) */
+.about .links .link.linkedin .link-icon {
+    mask-image: url(/icons/linkedin.png);
+    -webkit-mask-image: url(/icons/linkedin.png);
+}
+
+.about .links .link.github .link-icon {
+    mask-image: url(/icons/github.png);
+    -webkit-mask-image: url(/icons/github.png);
+}
+
 
 /** Small screens **/
 @media (max-device-width: 600px) {
