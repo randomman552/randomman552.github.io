@@ -4,10 +4,10 @@ name: Push Image
 
 trigger:
   branch:
-      - main
+    - master
   event:
-      exclude:
-          - pull_request
+    exclude:
+      - pull_request
 
 steps:
   - name: Build and Push Image
