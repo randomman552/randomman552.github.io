@@ -12,14 +12,11 @@ trigger:
 steps:
   - name: Build and Push Image
     image: plugins/docker
-    environment:
-      DOCKER_USER:
-        from_secret: docker-user
     settings:
       username:
           from_secret: docker-user
       password:
           from_secret: docker-key
-      repo: ${DOCKER_USER}/one-pager
+      repo: randomman552/one-pager
       tags:
           - latest
