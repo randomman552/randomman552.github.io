@@ -16,10 +16,10 @@ steps:
       DOCKER_USER:
         from_secret: docker-user
     settings:
-        username:
-            from_secret: docker-user
-        password:
-            from_secret: docker-key
-        repo: ${DOCKER_USER}/one-pager
-        tags:
-            - latest
+      username:
+          from_secret: docker-user
+      password:
+          from_secret: docker-key
+      repo: ${DOCKER_USER}/one-pager
+      tags:
+          - latest
