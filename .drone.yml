@@ -8,6 +8,7 @@ trigger:
   event:
     exclude:
       - pull_request
+      - promote
 
 steps:
   - name: Build and Push Image
