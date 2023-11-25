@@ -11,7 +11,8 @@ trigger:
       - promote
 
 steps:
-  - name: Build and Push Image
+  # Docker image
+  - name: docker-image
     image: plugins/docker
     settings:
       username:
@@ -21,3 +22,14 @@ steps:
       repo: randomman552/one-pager
       tags:
           - latest
+  
+  # Reporting
+  - name: build-reporter
+    image: randomman552/drone-build-reporter
+    depends_on:
+      - docker-image
+    settings:
+      gotify_token:
+        from_secret: gotify-token
+      gotify_url:
+        from_secret: gotify-url
